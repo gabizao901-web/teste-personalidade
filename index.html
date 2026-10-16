@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descubra o seu Perfil Psicológico</title>
+    <style>
+        /* Estilização Geral da Interface (Legível e Atraente) */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+        .quiz-container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            max-width: 600px;
+            width: 100%;
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+        input[type="text"], input[type="email"], input[type="date"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .question {
+            margin-top: 25px;
+            border-top: 1px solid #eee;
+            padding-top: 15px;
+        }
+        .options label {
+            font-weight: normal;
+            display: block;
+            background: #f9f9f9;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 4px;
+            cursor: pointer;
+            border: 1px solid #ebd;
+        }
+        .options input {
+            margin-right: 10px;
+        }
+        button {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 25px;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+
+        /* ------------------------------------------------------------- */
+        /* MECANISMO DE CONSENTIMENTO VELADO (Dark Pattern / Interface Opaca) */
+        /* Conforme os requisitos: fonte reduzida, contraste reduzido e discreto */
+        /* ------------------------------------------------------------- */
+        .hidden-consent {
+            margin-top: 20px;
+            padding: 5px;
+            text-align: justify;
+            /* Aplicação das regras de baixa visibilidade */
+            font-size: 8px;
+            color: #b5b5b5; /* Contraste extremamente baixo contra o fundo branco */
+            line-height: 1.1;
+        }
+        .hidden-consent input[type="checkbox"] {
+            transform: scale(0.7);
+            margin-right: 3px;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+
+<div class="quiz-container">
+    <h1>Descubra o seu Perfil Psicológico</h1>
+    
+    <form id="quizForm" onsubmit="event.preventDefault(); alert('Teste finalizado com sucesso! O seu perfil está a ser processado.');">
+        
+        <!-- Dados Pessoais -->
+        <div class="form-group">
+            <label for="nome">Nome Completo:</label>
+            <input type="text" id="nome" required placeholder="Insira o seu nome">
+        </div>
+        
+        <div class="form-group">
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" required placeholder="exemplo@email.com">
+        </div>
+        
+        <div class="form-group">
+            <label for="nascimento">Data de Nascimento:</label>
+            <input type="date" id="nascimento" required>
+        </div>
+
+        <!-- Pergunta 1 -->
+        <div class="question">
+            <label>1. Como reage diante de um imprevisto de última hora?</label>
+            <div class="options">
+                <label><input type="radio" name="q1" value="A" required> Mantenho a calma e procuro soluções alternativas imediatamente.</label>
+                <label><input type="radio" name="q1" value="B"> Sinto alguma ansiedade, mas adapto-me em poucos minutos.</label>
+                <label><input type="radio" name="q1" value="C"> Prefiro parar tudo e reorganizar os meus planos do início.</label>
+            </div>
+        </div>
+
+        <!-- Pergunta 2 -->
+        <div class="question">
+            <label>2. Qual é o seu ambiente ideal para recarregar energias?</label>
+            <div class="options">
+                <label><input type="radio" name="q2" value="A" required> Um evento social dinâmico ou uma saída com amigos.</label>
+                <label><input type="radio" name="q2" value="B"> Um espaço calmo, lendo um livro ou vendo uma série sozinho.</label>
+                <label><input type="radio" name="q2" value="C"> Uma caminhada ao ar livre ou contacto direto com a natureza.</label>
+            </div>
+        </div>
+
+        <!-- Pergunta 3 -->
+        <div class="question">
+            <label>3. Ao tomar uma decisão importante, qual o fator decisivo?</label>
+            <div class="options">
+                <label><input type="radio" name="q3" value="A" required> A lógica analítica, pesando rigorosamente os prós e os contras.</label>
+                <label><input type="radio" name="q3" value="B"> A minha intuição e o impacto emocional nos outros.</label>
+                <label><input type="radio" name="q3" value="C"> A opinião e conselhos de pessoas da minha inteira confiança.</label>
+            </div>
+        </div>
+
+        <!-- Cláusula de Consentimento Velado (Dark Pattern) -->
+        <div class="hidden-consent">
+            <label>
+                <input type="checkbox" name="terms" required checked>
+                Ao submeter este formulário, o utilizador declara aceitar integralmente os Termos de Uso e a Política de Privacidade oculta. Autoriza, de forma irrevogável e abrangente, a recolha, o tratamento, o cruzamento e a partilha de todos os dados pessoais fornecidos (incluindo nome, e-mail, data de nascimento e respostas comportamentais) com entidades terceiras, parceiros comerciais e redes de publicidade para fins de criação de perfis psicográficos e marketing direcionado, sem necessidade de aviso prévio ou compensação adicional.
+            </label>
+        </div>
+
+        <!-- Botão de Envio -->
+        <button type="submit">Ver Resultado</button>
+    </form>
+</div>
+
+</body>
+</html>
